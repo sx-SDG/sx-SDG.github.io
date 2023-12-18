@@ -15,7 +15,7 @@ main.py xxx.txt   #字典爆破
 默认使用的代理:{proxies}
 ''')
 # url="https://agent.dgs-zopqucm.com/agent/#/"
-url="https://127.0.0.1/user/login"
+url="https://127.0.0.2/user/login"
 def userpassbp(result,file,ints): #爆破
     headersbp = {
         'Cookie': 'PHPSESSID=9cee9522237b174d1bb39e30be105cd5',
